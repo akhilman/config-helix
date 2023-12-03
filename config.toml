@@ -1,0 +1,13 @@
+theme = "darcula-solid"
+
+[editor]
+line-number = "relative"
+soft-wrap.enable = true
+
+[editor.lsp]
+display-messages = true
+display-inlay-hints = true 
+
+[editor.statusline]
+left =  ["mode", "spinner", "file-name", "read-only-indicator", "file-modification-indicator"]
+right = ["version-control", "file-type", "diagnostics", "selections", "register", "position", "position-percentage", "file-encoding"]

@@ -1,0 +1,28 @@
+[[language]]
+name = "javascript"
+language-servers = ["deno"]
+
+[[language]]
+name = "typescript"
+language-servers = ["deno"]
+
+[language-server.deno]
+command = "deno"
+args = ["lsp"]
+
+[language-server.deno.config.deno]
+enable = true
+lint = true
+
+[language-server.pylsp.config.pylsp]
+plugins.black.enabled = true
+plugins.pylint.enabled = true
+plugins.pyflakes.enabled = false
+plugins.pyls_mypy.enabled = true
+plugins.pyls_mypy.live_mode = false
+plugins.isort.enabled = true
+plugins.rope_autoimport.enabled = true
+
+
+[language-server.rust-analyzer.config.rust-analyzer]
+check.command = "clippy" 
