@@ -3,6 +3,7 @@ theme = "darcula-solid"
 [editor]
 line-number = "relative"
 soft-wrap.enable = true
+indent-guides.render = true
 
 [editor.lsp]
 display-messages = true
