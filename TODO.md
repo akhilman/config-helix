@@ -8,5 +8,5 @@
   * CSpell with https://github.com/mattn/efm-langserver
 * Diff tool, try imediff.
 
-## onlyOnSave does not work in diagnostic-languageserver
+## onSaveOnly does not work in diagnostic-languageserver
 Report a bug?
