@@ -1,9 +1,10 @@
 theme = "darcula-solid"
 
 [editor]
-line-number = "relative"
-soft-wrap.enable = true
 indent-guides.render = true
+line-number = "relative"
+smart-tab.enable = false
+soft-wrap.enable = true
 
 [editor.lsp]
 display-messages = true
