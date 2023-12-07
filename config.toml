@@ -12,3 +12,6 @@ display-inlay-hints = true
 [editor.statusline]
 left =  ["mode", "spinner", "file-name", "read-only-indicator", "file-modification-indicator", "version-control"]
 right = ["diagnostics", "selections", "register", "position", "position-percentage", "file-type", "file-encoding"]
+
+[keys.normal.space]
+t = ":format" # Format document
