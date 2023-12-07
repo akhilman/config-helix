@@ -14,7 +14,7 @@ language-servers = [ "deno", "dls" ]
 
 [[language]]
 name = "markdown"
-language-servers = [ "markman", "dls" ]
+language-servers = [ "marksman", "dls" ]
 
 [[language]]
 name = "python"
