@@ -86,6 +86,7 @@ rootPatterns = [
 debounce = 1000
 formatLines = 1
 formatPattern = [
-  "^[^:]+:(\\d+):(\\d+) - (.*)$",
-  { line = 1, column = 2, message = [3] }
+  "^[^:]+:(\\d+):(\\d+) - (.*) \\((.*)\\)$",
+  { line = 1, column = 2, security = 3, message = [3, " (", 4, ")"] },
 ]
+securities = { "Unknown word" = "warning" }
