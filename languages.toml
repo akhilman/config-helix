@@ -1,14 +1,41 @@
+# Languages
+
+[[language]]
+name = "git-commit"
+language-servers = [ "dls" ]
+
 [[language]]
 name = "javascript"
-language-servers = ["deno"]
+language-servers = [ "deno", "dls" ]
 
 [[language]]
 name = "typescript"
-language-servers = ["deno"]
+language-servers = [ "deno", "dls" ]
+
+[[language]]
+name = "markdown"
+language-servers = [ "markman", "dls" ]
+
+[[language]]
+name = "python"
+language-servers = [ "pylsp", "dls" ]
+
+[[language]]
+name = "rust"
+language-servers = [ "rust-analyzer", "dls" ]
+
+[[language]]
+name = "text"
+scope = "text.plain"
+file-types = [ "txt" ]
+roots = []
+language-servers = [ "dls" ]
+
+# Language servers
 
 [language-server.deno]
 command = "deno"
-args = ["lsp"]
+args = [ "lsp" ]
 
 [language-server.deno.config.deno]
 enable = true
@@ -26,3 +53,39 @@ plugins.rope_autoimport.enabled = true
 
 [language-server.rust-analyzer.config.rust-analyzer]
 check.command = "clippy" 
+
+# Diagnostic language server.
+# See https://github.com/iamcco/diagnostic-languageserver .
+
+[language-server.dls]
+command = "deno"
+args = [ "run", "--allow-read", "--allow-env", "--allow-run", "--allow-sys", "npm:diagnostic-languageserver", "--stdio", "--log-level=2" ]
+
+[language-server.dls.config.filetypes]
+"*" = "cspell"
+
+# CSpell https://cspell.org/docs/getting-started/ .
+
+[language-server.dls.config.linters.cspell]
+command = "deno"
+args = [ "run", "--allow-read", "--allow-env", "npm:cspell", "stdin" ]
+sourceName = "cspell"
+rootPatterns = [
+  ".cspell.json",
+  "cspell.json",
+  ".cSpell.json",
+  "cSpell.json",
+  "cspell.config.js",
+  "cspell.config.cjs",
+  "cspell.config.json",
+  "cspell.config.yaml",
+  "cspell.config.yml",
+  "cspell.yaml",
+  "cspell.yml",
+]
+debounce = 1000
+formatLines = 1
+formatPattern = [
+  "^[^:]+:(\\d+):(\\d+) - (.*)$",
+  { line = 1, column = 2, message = [3] }
+]
