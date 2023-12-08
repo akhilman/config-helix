@@ -1,6 +1,10 @@
 # Languages
 
 [[language]]
+name = "fish"
+language-servers = [ "dls" ]
+
+[[language]]
 name = "git-commit"
 language-servers = [ "dls" ]
 
@@ -63,6 +67,7 @@ args = [ "run", "--allow-read", "--allow-env", "--allow-run", "--allow-sys", "np
 
 [language-server.dls.config.filetypes]
 "*" = "cspell"
+fish = "fish"
 
 # CSpell https://cspell.org/docs/getting-started/ .
 
@@ -90,3 +95,19 @@ formatPattern = [
   { line = 1, column = 2, security = 3, message = [3, " (", 4, ")"] },
 ]
 securities = { "Unknown word" = "warning" }
+
+# Fish shell
+
+[language-server.dls.config.linters.fish]
+command = "fish"
+args = [ "-n", "%file" ]
+isStdout = false
+isStderr = true
+sourceName = "fish"
+# onSaveOnly = true -- DLS never receives onDidSave event
+debounce = 1000
+formatLines = 1
+formatPattern = [
+  "^.*\\(line (\\d+)\\): (.*)$",
+  { "line" = 1, "message" = 2 }
+]
