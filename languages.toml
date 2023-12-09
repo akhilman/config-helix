@@ -73,7 +73,7 @@ fish = "fish"
 
 [language-server.dls.config.linters.cspell]
 command = "deno"
-args = [ "run", "--allow-read", "--allow-env", "npm:cspell", "stdin" ]
+args = [ "run", "--allow-read", "--allow-env", "npm:cspell", "lint", "--show-suggestions", "stdin" ]
 sourceName = "cspell"
 rootPatterns = [
   ".cspell.json",
@@ -91,8 +91,8 @@ rootPatterns = [
 debounce = 1000
 formatLines = 1
 formatPattern = [
-  "^[^:]+:(\\d+):(\\d+) - (.*) \\((.*)\\)$",
-  { line = 1, column = 2, security = 3, message = [3, " (", 4, ")"] },
+  "^[^:]+:(\\d+):(\\d+) - (.*) \\((.*)\\) (.*): \\[(.*)\\]",
+  { line = 1, column = 2, security = 3, message = [ 3, " (", 4, ") [", 6, "]" ] },
 ]
 securities = { "Unknown word" = "warning" }
 
