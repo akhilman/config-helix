@@ -62,8 +62,8 @@ check.command = "clippy"
 # See https://github.com/iamcco/diagnostic-languageserver .
 
 [language-server.dls]
-command = "deno"
-args = [ "run", "--allow-read", "--allow-env", "--allow-run", "--allow-sys", "npm:diagnostic-languageserver", "--stdio", "--log-level=2" ]
+command = "diagnostic-languageserver"
+args = [ "--stdio", "--log-level=2" ]
 
 [language-server.dls.config.filetypes]
 "*" = "cspell"
@@ -72,8 +72,8 @@ fish = "fish"
 # CSpell https://cspell.org/docs/getting-started/ .
 
 [language-server.dls.config.linters.cspell]
-command = "deno"
-args = [ "run", "--allow-read", "--allow-env", "npm:cspell", "lint", "--show-suggestions", "stdin" ]
+command = "cspell"
+args = [ "lint", "--show-suggestions", "stdin" ]
 sourceName = "cspell"
 rootPatterns = [
   ".cspell.json",
