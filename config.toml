@@ -16,3 +16,13 @@ right = ["diagnostics", "selections", "register", "position", "position-percenta
 
 [keys.normal.space]
 t = ":format" # Format document
+
+[keys.insert]
+"A-b" = "move_prev_word_start"
+"A-f" = "move_next_word_start"
+"C-b" = "move_char_left"
+"C-f" = "move_char_right"
+"C-a" = "goto_line_start"
+"C-e" = "goto_line_end"
+"C-p" = "move_visual_line_up"
+"C-n" = "move_visual_line_down"
