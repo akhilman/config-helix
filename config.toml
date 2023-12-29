@@ -14,6 +14,9 @@ display-inlay-hints = true
 left =  ["mode", "spinner", "file-name", "read-only-indicator", "file-modification-indicator", "version-control"]
 right = ["diagnostics", "selections", "register", "position", "position-percentage", "file-type", "file-encoding"]
 
+[keys.normal]
+"esc" = ["keep_primary_selection", "collapse_selection"]
+
 [keys.normal.space]
 t = ":format" # Format document
 
