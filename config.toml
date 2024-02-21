@@ -29,3 +29,11 @@ t = ":format" # Format document
 "C-e" = "goto_line_end"
 "C-p" = "move_visual_line_up"
 "C-n" = "move_visual_line_down"
+
+# Works by default
+# C-k - remove from the cursor to end of the line
+# C-u - remove from the cursor to start of the line
+# C-w - remove a word to the left from the cursor
+# C-h - remove a character to the left from the cursor
+# A-d - remove a word to the right from the cursor
+# C-d - remove a character to the right from the cursor
