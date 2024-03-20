@@ -104,10 +104,7 @@ args = [ "-n", "%file" ]
 isStdout = false
 isStderr = true
 sourceName = "fish"
-# onSaveOnly = true -- DLS never receives onDidSave event.
-#  See:
-#    https://github.com/helix-editor/helix/issues/9034
-#    https://github.com/helix-editor/helix/pull/9101
+onSaveOnly = true 
 debounce = 1000
 formatLines = 1
 formatPattern = [
