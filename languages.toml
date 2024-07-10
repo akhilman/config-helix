@@ -3,6 +3,7 @@
 [[language]]
 name = "fish"
 language-servers = [ "dls" ]
+auto-format = true
 
 [[language]]
 name = "git-commit"
@@ -69,6 +70,9 @@ args = [ "--stdio", "--log-level=2" ]
 "*" = "cspell"
 fish = "fish"
 
+[language-server.dls.config.formatFiletypes]
+fish = "fish_indent"
+
 # CSpell https://cspell.org/docs/getting-started/ .
 
 [language-server.dls.config.linters.cspell]
@@ -111,3 +115,6 @@ formatPattern = [
   "^.*\\(line (\\d+)\\): (.*)$",
   { "line" = 1, "message" = 2 }
 ]
+
+[language-server.dls.config.formatters.fish_indent]
+command = "fish_indent"
