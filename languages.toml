@@ -24,6 +24,7 @@ language-servers = [ "marksman", "dls" ]
 [[language]]
 name = "python"
 language-servers = [ "pylsp", "dls" ]
+auto-format = true
 
 [[language]]
 name = "rust"
