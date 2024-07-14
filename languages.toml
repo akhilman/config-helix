@@ -2,40 +2,40 @@
 
 [[language]]
 name = "fish"
-language-servers = [ "dls" ]
+language-servers = [ "efm" ]
 auto-format = true
 
 [[language]]
 name = "git-commit"
-language-servers = [ "dls" ]
+language-servers = [ "efm" ]
 
 [[language]]
 name = "javascript"
-language-servers = [ "deno", "dls" ]
+language-servers = [ "deno", "efm" ]
 
 [[language]]
 name = "typescript"
-language-servers = [ "deno", "dls" ]
+language-servers = [ "deno", "efm" ]
 
 [[language]]
 name = "markdown"
-language-servers = [ "marksman", "dls" ]
+language-servers = [ "marksman", "efm" ]
 
 [[language]]
 name = "python"
-language-servers = [ "pylsp", "dls" ]
+language-servers = [ "pylsp", "efm" ]
 auto-format = true
 
 [[language]]
 name = "rust"
-language-servers = [ "rust-analyzer", "dls" ]
+language-servers = [ "rust-analyzer", "efm" ]
 
 [[language]]
 name = "text"
 scope = "text.plain"
 file-types = [ "txt" ]
 roots = []
-language-servers = [ "dls" ]
+language-servers = [ "efm" ]
 
 # Language servers
 
@@ -47,6 +47,12 @@ args = [ "lsp" ]
 enable = true
 lint = true
 
+[language-server.efm]
+command = "efm-langserver"
+# efm-langserver configuratin if here:
+# https://codeberg.org/AkhIL/config-efm-langserver
+# Maybe I will move it here, maybe not
+
 [language-server.pylsp.config.pylsp]
 plugins.black.enabled = true
 plugins.pylint.enabled = true
@@ -54,66 +60,5 @@ plugins.pyflakes.enabled = false
 plugins.isort.enabled = true
 # plugins.rope_autoimport.enabled = true
 
-
 [language-server.rust-analyzer.config.rust-analyzer]
 check.command = "clippy" 
-
-# Diagnostic language server.
-# See https://github.com/iamcco/diagnostic-languageserver .
-
-[language-server.dls]
-command = "diagnostic-languageserver"
-args = [ "--stdio", "--log-level=2" ]
-
-[language-server.dls.config.filetypes]
-"*" = "cspell"
-fish = "fish"
-
-[language-server.dls.config.formatFiletypes]
-fish = "fish_indent"
-
-# CSpell https://cspell.org/docs/getting-started/ .
-
-[language-server.dls.config.linters.cspell]
-command = "cspell"
-args = [ "lint", "--show-suggestions", "stdin" ]
-sourceName = "cspell"
-rootPatterns = [
-  ".cspell.json",
-  "cspell.json",
-  ".cSpell.json",
-  "cSpell.json",
-  "cspell.config.js",
-  "cspell.config.cjs",
-  "cspell.config.json",
-  "cspell.config.yaml",
-  "cspell.config.yml",
-  "cspell.yaml",
-  "cspell.yml",
-]
-debounce = 1000
-formatLines = 1
-formatPattern = [
-  "^[^:]+:(\\d+):(\\d+) - (.*) \\((.*)\\) (.*): \\[(.*)\\]",
-  { line = 1, column = 2, security = 3, message = [ 3, " (", 4, ") [", 6, "]" ] },
-]
-securities = { "Unknown word" = "warning" }
-
-# Fish shell
-
-[language-server.dls.config.linters.fish]
-command = "fish"
-args = [ "-n", "%file" ]
-isStdout = false
-isStderr = true
-sourceName = "fish"
-onSaveOnly = true 
-debounce = 1000
-formatLines = 1
-formatPattern = [
-  "^.*\\(line (\\d+)\\): (.*)$",
-  { "line" = 1, "message" = 2 }
-]
-
-[language-server.dls.config.formatters.fish_indent]
-command = "fish_indent"
