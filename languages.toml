@@ -49,7 +49,7 @@ lint = true
 
 [language-server.efm]
 command = "efm-langserver"
-# efm-langserver configuratin if here:
+# efm-langserver configuratin is there:
 # https://codeberg.org/AkhIL/config-efm-langserver
 # Maybe I will move it here, maybe not
 
