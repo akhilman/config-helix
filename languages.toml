@@ -23,7 +23,7 @@ language-servers = [ "marksman", "efm" ]
 
 [[language]]
 name = "python"
-language-servers = [ "pylsp", "efm" ]
+language-servers = [ "ruff", "pylsp", "efm" ]
 auto-format = true
 
 [[language]]
@@ -53,12 +53,27 @@ command = "efm-langserver"
 # https://codeberg.org/AkhIL/config-efm-langserver
 # Maybe I will move it here, maybe not
 
-[language-server.pylsp.config.pylsp]
-plugins.black.enabled = true
-plugins.pylint.enabled = true
-plugins.pyflakes.enabled = false
-plugins.isort.enabled = true
-# plugins.rope_autoimport.enabled = true
+[language-server.pylsp.config.pylsp.plugins]
+autopep8.enabled = false
+pycodestyle.enable = false
+pyflakes.enable = false
+pylint.enable = false
+rope_autoimport.enabled = true
+rope_autoimport.code_actions.enabled = false
+rope_autoimport.completions.enabled = false
+yapf.enable = false
+
+[language-server.ruff]
+command = "ruff"
+args = [ "server" ]
+
+# [language-server.ruff.config.settings.lint]
+# select = [ "ALL" ]
+# ignore = [
+#   "ERA001", # Commented-out code
+#   "ANN", # Type annotation
+#   "D", # Doctring
+# ]
 
 [language-server.rust-analyzer.config.rust-analyzer]
 check.command = "clippy" 
