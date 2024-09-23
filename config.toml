@@ -1,4 +1,4 @@
-theme = "darcula-solid"
+theme = "kanagawa"
 
 [editor]
 indent-guides.render = true
