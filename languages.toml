@@ -80,7 +80,7 @@ args = [ "server" ]
 # ignore = [
 #   "ERA001", # Commented-out code
 #   "ANN", # Type annotation
-#   "D", # Doctring
+#   "D", # Docstring
 # ]
 
 [language-server.rust-analyzer.config.rust-analyzer]
