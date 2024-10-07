@@ -18,6 +18,10 @@ name = "typescript"
 language-servers = [ "deno", "efm" ]
 
 [[language]]
+name = "toml"
+language-servers = [ "taplo", "efm" ]
+
+[[language]]
 name = "markdown"
 language-servers = [ "marksman", "efm" ]
 
