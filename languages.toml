@@ -1,6 +1,10 @@
 # Languages
 
 [[language]]
+name = "capnp"
+language-servers = [ "efm" ]
+
+[[language]]
 name = "fish"
 language-servers = [ "efm" ]
 auto-format = true
