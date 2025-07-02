@@ -31,7 +31,7 @@ language-servers = [ "marksman", "efm" ]
 
 [[language]]
 name = "python"
-language-servers = [ "ruff", "pylsp", "efm" ]
+language-servers = [ "ty", "ruff", "pylsp", "efm" ]
 auto-format = true
 
 [[language]]
@@ -67,10 +67,16 @@ pycodestyle.enable = false
 pyflakes.enable = false
 pylint.enable = false
 rope_autoimport.enabled = true
-rope_autoimport.code_actions.enabled = false
+rope_autoimport.code_actions.enabled = true
 rope_autoimport.completions.enabled = false
 yapf.enable = false
 
+# TODO: Already defined in current Helix's master. Remove after next release.
+[language-server.ty]
+command = "ty"
+args = [ "server" ]
+
+# TODO: Already defined in current Helix's master. Remove after next release.
 [language-server.ruff]
 command = "ruff"
 args = [ "server" ]
