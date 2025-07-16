@@ -2,50 +2,54 @@
 
 [[language]]
 name = "capnp"
-language-servers = [ "efm" ]
+language-servers = [ "codebook" ]
 
 [[language]]
 name = "fish"
-language-servers = [ "efm" ]
+language-servers = [ "efm", "codebook" ]
 auto-format = true
 
 [[language]]
 name = "git-commit"
-language-servers = [ "efm" ]
+language-servers = [ "codebook" ]
 
 [[language]]
 name = "javascript"
-language-servers = [ "deno", "efm" ]
+language-servers = [ "deno", "codebook" ]
 
 [[language]]
 name = "typescript"
-language-servers = [ "deno", "efm" ]
+language-servers = [ "deno", "codebook" ]
 
 [[language]]
 name = "toml"
-language-servers = [ "taplo", "efm" ]
+language-servers = [ "taplo", "codebook" ]
 
 [[language]]
 name = "markdown"
-language-servers = [ "marksman", "efm" ]
+language-servers = [ "marksman", "codebook" ]
 
 [[language]]
 name = "python"
-language-servers = [ "ty", "ruff", "pylsp", "efm" ]
+language-servers = [ "ty", "ruff", "pylsp", "codebook" ]
 auto-format = true
 
 [[language]]
 name = "rust"
-language-servers = [ "rust-analyzer", "efm" ]
+language-servers = [ "rust-analyzer", "codebook" ]
 
 [[language]]
 name = "text"
 scope = "text.plain"
 file-types = [ "txt" ]
 roots = []
-language-servers = [ "efm" ]
+language-servers = [ "codebook" ]
 
 # Language servers
+ 
+[language-server.codebook]
+command = "codebook-lsp"
+args = ["serve"]
 
 [language-server.deno]
 command = "deno"
