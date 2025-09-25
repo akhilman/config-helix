@@ -22,6 +22,10 @@ name = "typescript"
 language-servers = [ "deno", "codebook" ]
 
 [[language]]
+name = "json"
+language-servers = [ "deno", "codebook" ]
+
+[[language]]
 name = "toml"
 language-servers = [ "taplo", "codebook" ]
 
