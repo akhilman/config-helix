@@ -43,6 +43,11 @@ name = "rust"
 language-servers = [ "rust-analyzer", "codebook" ]
 
 [[language]]
+name = "sql"
+formatter = { command = "deno", args = ["fmt", "--unstable-sql", "--ext", "sql", "-"] }
+auto-format = true
+
+[[language]]
 name = "text"
 scope = "text.plain"
 file-types = [ "txt" ]
