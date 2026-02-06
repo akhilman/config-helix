@@ -2,67 +2,73 @@
 
 [[language]]
 name = "capnp"
-language-servers = [ "codebook" ]
+language-servers = ["codebook"]
 
 [[language]]
 name = "fish"
-language-servers = [ "efm", "codebook" ]
+language-servers = ["efm", "codebook"]
 auto-format = true
 
 [[language]]
 name = "git-commit"
-language-servers = [ "codebook" ]
+language-servers = ["codebook"]
 
 [[language]]
 name = "javascript"
-language-servers = [ "deno", "codebook" ]
+language-servers = ["deno", "codebook"]
 
 [[language]]
 name = "typescript"
-language-servers = [ "deno", "codebook" ]
+language-servers = ["deno", "codebook"]
 
 [[language]]
 name = "json"
-language-servers = [ "deno", "codebook" ]
+language-servers = ["deno", "codebook"]
 
 [[language]]
 name = "toml"
-language-servers = [ "taplo", "codebook" ]
+language-servers = ["taplo", "codebook"]
 
 [[language]]
 name = "markdown"
-language-servers = [ "marksman", "codebook" ]
+language-servers = ["marksman", "codebook"]
 
 [[language]]
 name = "python"
-language-servers = [ "ty", "ruff", "pylsp", "codebook" ]
+language-servers = ["ty", "ruff", "pylsp", "codebook"]
 auto-format = true
 
 [[language]]
 name = "rust"
-language-servers = [ "rust-analyzer", "codebook" ]
+language-servers = ["rust-analyzer", "codebook"]
 
 [[language]]
 name = "sql"
-formatter = { command = "deno", args = ["fmt", "--unstable-sql", "--ext", "sql", "-"] }
+formatter = { command = "deno", args = [
+  "fmt",
+  "--unstable-sql",
+  "--ext",
+  "sql",
+  "-",
+] }
 auto-format = true
 
 [[language]]
 name = "text"
 scope = "text.plain"
-file-types = [ "txt" ]
+file-types = ["txt"]
 roots = []
-language-servers = [ "codebook" ]
+language-servers = ["codebook"]
 
 # Language servers
- 
+
 [language-server.codebook]
 command = "codebook-lsp"
 args = ["serve"]
 
 [language-server.deno]
 command = "deno"
-args = [ "lsp" ]
+args = ["lsp"]
 
 [language-server.deno.config.deno]
 enable = true
@@ -93,4 +99,4 @@ yapf.enable = false
 # ]
 
 [language-server.rust-analyzer.config.rust-analyzer]
-check.command = "clippy" 
+check.command = "clippy"
