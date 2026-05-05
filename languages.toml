@@ -23,6 +23,7 @@ language-servers = ["deno", "codebook"]
 
 [[language]]
 name = "json"
+comment-token = "//"
 language-servers = ["deno", "codebook"]
 
 [[language]]
