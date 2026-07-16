@@ -59,7 +59,6 @@ formatter = { command = "deno", args = [
   "sql",
   "-",
 ] }
-auto-format = true
 
 [[language]]
 name = "text"
