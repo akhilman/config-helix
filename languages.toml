@@ -52,13 +52,14 @@ language-servers = ["rust-analyzer", "codebook"]
 
 [[language]]
 name = "sql"
+language-servers = ["codebook"]
 formatter = { command = "deno", args = [
-  "fmt",
-  "--unstable-sql",
-  "--ext",
-  "sql",
-  "-",
+ "run",
+ "--allow-env=COLUMNS",
+ "--allow-read",
+ "npm:sql-formatter",
 ] }
+auto-format = true
 
 [[language]]
 name = "text"
