@@ -68,10 +68,10 @@ language-servers = ["rust-analyzer", "codebook"]
 name = "sql"
 language-servers = ["codebook"]
 formatter = { command = "deno", args = [
- "run",
- "--allow-env=COLUMNS",
- "--allow-read",
- "npm:sql-formatter",
+  "run",
+  "--allow-env=COLUMNS",
+  "--allow-read",
+  "npm:sql-formatter",
 ] }
 auto-format = true
 

@@ -1,0 +1,3 @@
+[formatting]
+array_auto_collapse = false # arrays: one item per line, never collapsed
+inline_table_expand = true  # inline tables: one key per line   array_auto_collapse = false
