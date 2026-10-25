@@ -1,6 +1,12 @@
 # Languages
 
 [[language]]
+name = "bash"
+
+[language.formatter]
+command = "shfmt"
+
+[[language]]
 name = "capnp"
 language-servers = ["codebook"]
 
