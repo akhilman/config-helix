@@ -26,12 +26,10 @@ language-servers = ["deno"]
 [[language]]
 name = "html"
 language-servers = ["deno", "codebook"]
-formatter = { command = "deno", args = [
-  "fmt",
-  "--ext",
-  "html",
-  "-",
-] }
+
+[language.formatter]
+command = "deno"
+args = ["fmt", "--ext", "html", "-"]
 
 [[language]]
 name = "javascript"
@@ -45,12 +43,10 @@ language-servers = ["deno", "codebook"]
 name = "json"
 comment-token = "//"
 language-servers = ["deno", "codebook"]
-formatter = { command = "deno", args = [
-  "fmt",
-  "--ext",
-  "json",
-  "-",
-] }
+
+[language.formatter]
+command = "deno"
+args = ["fmt", "--ext", "json", "-"]
 auto-format = true
 
 [[language]]
@@ -73,12 +69,10 @@ language-servers = ["rust-analyzer", "codebook"]
 [[language]]
 name = "sql"
 language-servers = ["codebook"]
-formatter = { command = "deno", args = [
-  "run",
-  "--allow-env=COLUMNS",
-  "--allow-read",
-  "npm:sql-formatter",
-] }
+
+[language.formatter]
+command = "deno"
+args = ["run", "--allow-env=COLUMNS", "--allow-read", "npm:sql-formatter"]
 auto-format = true
 
 [[language]]
