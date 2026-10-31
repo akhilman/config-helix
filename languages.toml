@@ -59,7 +59,7 @@ language-servers = ["marksman", "codebook"]
 
 [[language]]
 name = "python"
-language-servers = ["ty", "ruff", "pylsp", "codebook"]
+language-servers = ["ty", "ruff", "codebook"]
 auto-format = true
 
 [[language]]
